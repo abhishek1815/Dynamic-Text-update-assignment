@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Text Update</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: "Poppins", "Segoe UI", sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(120deg, rgb(137, 247, 254), rgb(102, 166, 255));
+        }
+        .box{
+            width: 420px;
+            padding: 35px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.697);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+            text-align: center;
+        }
+        h1{
+            font-size: 26px;
+            font-weight: 600;
+            color: rgb(15, 23, 42);
+            margin-bottom: 12px;
+        }
+        .para{
+            font-size: 14px;
+            color: rgb(51, 65, 85);
+            margin-bottom: 22px;
+        }
+        .output{
+            font-size: 17px;
+            font-weight: 500;
+            color: black;
+            padding: 12px;
+            background: rgba(255,255,255,0.6);
+            border-radius: 10px;
+            min-height: 42px;
+            margin-bottom: 18px;
+
+        }
+        input{
+            width: 100%;
+            padding: 13px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            font-size: 15px;
+            margin-bottom: 16px;
+            background: rgba(255,255,255,0.85);
+        }
+        button{
+            width: 32%;
+            padding: 13px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            background: linear-gradient(rgb(37, 99, 235), rgb(30, 64, 175));
+            color: white;
+            cursor: pointer;
+        }
+        button:hover{
+            box-shadow: 0 8px 20px rgba(30, 64, 175, 0.4);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h1>Dynamic Text Update</h1>
+        <p class="para">Enter text below and display it instantly</p>
+
+        <div class="output" id="show">
+            Your text will appear here
+        </div>
+
+        <input type="text" id="input" placeholder="Type something meaningful...">
+
+        <button onclick="updateText()">Display Text</button>
+    </div>
+
+    <script>
+        function updateText(){
+            let inputText = document.getElementById("input").value;
+            let output = document.getElementById("show");
+
+            output.innerText = inputText || "Your text will appear here";
+        }
+    </script>
+
+</body>
+</html>
